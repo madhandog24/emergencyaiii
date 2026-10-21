@@ -1,0 +1,20 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emergency-ai
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: emergency-ai
+  template:
+    metadata:
+      labels:
+        app: emergency-ai
+    spec:
+      containers:
+        - name: emergency-ai
+          image: nginx:latest
+          ports:
+            - containerPort: 80
